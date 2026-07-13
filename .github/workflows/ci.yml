@@ -1,6 +1,7 @@
 name: CI
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - main
@@ -63,7 +64,6 @@ jobs:
 
       matrix:
         os: ${{ fromJSON(needs.prepare.outputs.os_list) }}
-        
         sofa_branch: [master]
         with_mesh_refinement: [ON, OFF]
 
